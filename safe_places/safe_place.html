@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safe Places</title>
+  <link rel="stylesheet" href="safe_place.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Safe Places</h1>
+    
+    <!-- Search input -->
+    <input type="text" id="search" placeholder="Filter by searching location" class="hidden">
+    
+    <!-- City selection -->
+    <label for="citySelect">Select your city:</label>
+    <select id="citySelect">
+      <option value="">-- Choose City --</option>
+      <option value="Seattle">Seattle</option>
+      <option value="Los Angeles">Los Angeles</option>
+    </select>
+  </div>
+
+  <div class="content">
+    <!-- List of safe places -->
+    <ul id="places"></ul>
+    
+    <!-- Update button -->
+    <button id="updateBtn" class="hidden">Update Resources</button>
+  </div>
+
+  <script>
+    let safePlacesData = {};
+    let currentPlaces = [];
+    
+    fetch('search_data.json')
+      .then(res => res.json())
+      .then(data => { safePlacesData = data; })
+      .catch(err => console.error("Error loading JSON:", err));
+    
+    const citySelect = document.getElementById('citySelect');
+    const searchInput = document.getElementById('search');
+    const updateBtn = document.getElementById('updateBtn');
+    const placesList = document.getElementById('places');
+    
+    citySelect.addEventListener('change', () => {
+      const city = citySelect.value;
+      if (!city) {
+        placesList.innerHTML = '';
+        searchInput.classList.add('hidden');
+        updateBtn.classList.add('hidden');
+        return;
+      }
+      currentPlaces = safePlacesData[city] || [];
+      displayPlaces(currentPlaces);
+      searchInput.classList.remove('hidden');
+      updateBtn.classList.remove('hidden');
+    });
+    
+    function displayPlaces(list) {
+      placesList.innerHTML = '';
+      list.forEach(place => {
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>${place.name}</strong> (${place.type})<br>
+                        ${place.phone ? 'Phone: ' + place.phone + '<br>' : ''}
+                        ${place.alt_phone ? 'Alt Phone: ' + place.alt_phone + '<br>' : ''}
+                        ${place.email ? 'Email: ' + place.email + '<br>' : ''}
+                        ${place.web_page || place.website ? 'Web: ' + (place.web_page || place.website) + '<br>' : ''}
+                        Availability: ${place.availability}<br>
+                        ${place.description}`;
+        placesList.appendChild(li);
+      });
+    }
+    
+    searchInput.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase();
+      const filtered = currentPlaces.filter(place =>
+        place.name.toLowerCase().includes(query) ||
+        (place.type && place.type.toLowerCase().includes(query))
+      );
+      displayPlaces(filtered);
+    });
+    
+    updateBtn.addEventListener('click', () => {
+      alert("Update Resource feature coming soon!");
+    });
+  </script>
+</body>
+</html>
