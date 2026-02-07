@@ -1,5 +1,8 @@
 {
   "ios": {
     "bundleIdentifier": "com.anonymous.dv-help"
+  },
+  "android": {
+    "package": "com.anonymous.dvhelp"
   }
 }
