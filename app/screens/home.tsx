@@ -47,10 +47,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 40,
-
+    fontSize: 28,
+    fontWeight: "700",
     marginBottom: 20,
-    marginTop: 10,
+    marginTop: 40,
     color: "#EDF6F9",
   },
   card: {
