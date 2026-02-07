@@ -4,10 +4,18 @@ import { NavigationContainer } from "@react-navigation/native";
 
 import HomeScreen from "../screens/home";
 import Calculator from "../screens/calculator";
+import DeviceSafetyScreen from "../screens/deviceSafety";
+import newPassword from "../screens/setPassword";
+import SetLocationScreen from "../screens/setLocation";
+import runSafetyCheck from "../screens/runSafetyCheck";
 
 type RootStackParamList = {
   Calculator: undefined;
   HomeScreen: undefined;
+  DeviceSafety: undefined;
+  newPassword: undefined;
+  setLocation: undefined;
+  runSafetyCheck: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -22,8 +30,29 @@ export default function AppNavigator() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="DeviceSafety"
+          component={DeviceSafetyScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="newPassword"
+          component={newPassword}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="runSafetyCheck"
+          component={runSafetyCheck}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="setLocation"
+          component={SetLocationScreen}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
