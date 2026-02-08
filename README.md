@@ -1,6 +1,7 @@
 # DV_Help
 ## Code2040 Hackathon Team 26
-A discreet domestic violence support app built for safety, accessibility and trust. This is a mobile app prototype, it is disguised as a calculator.
+A discreet domestic violence support app built for safety, accessibility and trust. 
+This is a mobile app prototype disguised as a calculator.
 
 ## Inspiration
 For decades, the default response to domestic violence in the U.S. has been "call the police."
