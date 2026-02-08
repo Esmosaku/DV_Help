@@ -44,6 +44,7 @@ export let PASSWORD = "2+0+4+0";
 export let USERNAME = "Jane Doe";
 export let LOCATION = "Seattle";
 
+
 export const setPassword = (newPass: string) => {
   PASSWORD = newPass;
 };
