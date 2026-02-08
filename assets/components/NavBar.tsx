@@ -33,7 +33,7 @@ export default function Navbar() {
       </TouchableOpacity>
 
       {/* Plan */}
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("Plan")}>
         <Feather name="clipboard" size={24} color="#7884AE" />
         <Text style={styles.label}>Plan</Text>
       </TouchableOpacity>
