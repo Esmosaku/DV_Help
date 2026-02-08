@@ -11,7 +11,7 @@ This project was created to explore alternative, survivor-centered pathways to s
 - Are discreet and hard to detect by an abuser
 - Provide resources, planning, and information in a safe way
 
-## Function
+## Features
 ### Calculator Interface
 - Functions like a normal calculator
 - Entering a specific code (2 + 0 + 4 + 0) unlocks the app
