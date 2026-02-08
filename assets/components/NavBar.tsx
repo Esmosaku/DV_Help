@@ -27,7 +27,7 @@ export default function Navbar() {
       </TouchableOpacity>
 
       {/* Alert */}
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("alert")}  >
         <Feather name="bell" size={24} color="#7884AE" />
         <Text style={styles.label}>Alert</Text>
       </TouchableOpacity>
