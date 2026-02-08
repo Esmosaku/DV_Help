@@ -1,4 +1,4 @@
-# DV_Help
+#  Haven
 ## Code2040 Hackathon Team 26
 A discreet domestic violence support app built for safety, accessibility and trust. 
 This is a mobile app prototype disguised as a calculator.
@@ -53,7 +53,7 @@ npx expo run:ios
 
 ## Demo
 
-Check out the demo video: [DV_help]( ****)
+Check out the demo video: [Haven]( ****)
 
 
 
