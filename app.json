@@ -1,4 +1,12 @@
 {
+  "expo": {
+    "name": "Calculator",
+    "slug": "calculator",
+    "icon": "./assets/logo.png",
+    "ios": {
+      "bundleIdentifier": "com.anonymous.calculator"
+    }
+  },
   "ios": {
     "bundleIdentifier": "com.anonymous.dv-help"
   },
