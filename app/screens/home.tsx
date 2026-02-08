@@ -2,8 +2,11 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Navbar from "../../assets/components/NavBar";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
+
 
 export default function HomeScreen() {
+  const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -27,7 +30,7 @@ export default function HomeScreen() {
         <Text style={styles.cardText}>Safe Places</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("support")}>
         <Text style={styles.cardText}>Resources</Text>
       </TouchableOpacity>
 
