@@ -10,6 +10,7 @@ import SetLocationScreen from "../screens/setLocation";
 import runSafetyCheck from "../screens/runSafetyCheck";
 import AddDocumentsScreen from "../screens/addDocument";
 import documents from "../screens/documents";
+import support from "../screens/support";
 
 type RootStackParamList = {
   Calculator: undefined;
@@ -20,6 +21,7 @@ type RootStackParamList = {
   runSafetyCheck: undefined;
   addDocument: undefined;
   documents: undefined;
+  support: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -36,6 +38,11 @@ export default function AppNavigator() {
         <Stack.Screen
           name="documents"
           component={documents}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="support"
+          component={support}
           options={{ headerShown: false }}
         />
         <Stack.Screen
