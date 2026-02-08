@@ -8,10 +8,12 @@ import DeviceSafetyScreen from "../screens/deviceSafety";
 import newPassword from "../screens/setPassword";
 import SetLocationScreen from "../screens/setLocation";
 import runSafetyCheck from "../screens/runSafetyCheck";
+import PlanScreen from "../screens/plan";
 
 type RootStackParamList = {
   Calculator: undefined;
   HomeScreen: undefined;
+  Plan: undefined;
   DeviceSafety: undefined;
   newPassword: undefined;
   setLocation: undefined;
@@ -48,6 +50,11 @@ export default function AppNavigator() {
         <Stack.Screen
           name="HomeScreen"
           component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Plan"
+          component={PlanScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen

@@ -1,9 +1,11 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import Navbar from "../../assets/components/NavBar";
 import { LinearGradient } from "expo-linear-gradient";
 
 export default function HomeScreen() {
+  const navigation: any = useNavigation();
   return (
     <View style={styles.container}>
       <LinearGradient
@@ -14,7 +16,9 @@ export default function HomeScreen() {
       ></LinearGradient>
       <Text style={styles.title}>Dashboard</Text>
 
-      <TouchableOpacity style={styles.profileCard}>
+      <TouchableOpacity 
+        style={styles.profileCard}
+        onPress={() => navigation.navigate("Plan")}>
         <Text style={styles.profileCardText}>Welcome Jane</Text>
         <Text style={{ fontSize: 18, color: "#EDF6F9" }}>Plan Status:</Text>
       </TouchableOpacity>
