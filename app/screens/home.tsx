@@ -3,6 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Navbar from "../../assets/components/NavBar";
 import { LinearGradient } from "expo-linear-gradient";
+import { useNavigation } from "@react-navigation/native";
+import { Linking } from "react-native";
+
 
 export default function HomeScreen() {
   const navigation: any = useNavigation();
@@ -31,11 +34,21 @@ export default function HomeScreen() {
         <Text style={styles.cardText}>Safe Places</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity
+        style={styles.card}
+        onPress={() => navigation.navigate("support")}
+      >
         <Text style={styles.cardText}>Resources</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity style={styles.card}>
+      <TouchableOpacity
+        style={styles.card}
+        onPress={() =>
+          Linking.openURL(
+            "https://www.google.com/search?q=weather&sca_esv=47422b062f7ec537&sxsrf=ANbL-n7kLCB4J5lwDVC8Ge81j23tKZOx5A%3A1770511911713&ei=J96HaZabK9ur0PEPhebq8AU&ved=0ahUKEwjWysXs1siSAxXbFTQIHQWzGl4Q4dUDCBQ&uact=5",
+          )
+        }
+      >
         <Text style={styles.cardText}>Quick Exit</Text>
       </TouchableOpacity>
 
@@ -51,10 +64,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   title: {
-    fontSize: 40,
-
+    fontSize: 28,
+    fontWeight: "700",
     marginBottom: 20,
-    marginTop: 10,
+    marginTop: 40,
     color: "#EDF6F9",
   },
   card: {

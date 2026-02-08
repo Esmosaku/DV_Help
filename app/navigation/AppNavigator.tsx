@@ -9,6 +9,10 @@ import newPassword from "../screens/setPassword";
 import SetLocationScreen from "../screens/setLocation";
 import runSafetyCheck from "../screens/runSafetyCheck";
 import PlanScreen from "../screens/plan";
+import AddDocumentsScreen from "../screens/addDocument";
+import documents from "../screens/documents";
+import support from "../screens/support";
+import EmergencyAlert from "../screens/alert";
 
 type RootStackParamList = {
   Calculator: undefined;
@@ -18,6 +22,10 @@ type RootStackParamList = {
   newPassword: undefined;
   setLocation: undefined;
   runSafetyCheck: undefined;
+  addDocument: undefined;
+  documents: undefined;
+  support: undefined;
+  alert: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -29,6 +37,26 @@ export default function AppNavigator() {
         <Stack.Screen
           name="Calculator"
           component={Calculator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="documents"
+          component={documents}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="alert"
+          component={EmergencyAlert}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="support"
+          component={support}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="addDocument"
+          component={AddDocumentsScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen

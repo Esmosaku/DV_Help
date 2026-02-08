@@ -3,28 +3,31 @@ import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 import { Feather } from "@expo/vector-icons";
 
+import { useNavigation } from "@react-navigation/native";
+
 export default function Navbar() {
+  const navigation = useNavigation<any>();
   return (
     <View style={styles.container}>
       {/* Home */}
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("HomeScreen")  }>
         <Feather name="home" size={24} color="#7884AE" />
         <Text style={styles.label}>Home</Text>
       </TouchableOpacity>
 
       {/* Documents */}
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("documents") }>
         <Feather name="file-text" size={24} color="#7884AE" />
         <Text style={styles.label}>Documents</Text>
       </TouchableOpacity>
 
       {/* Center Add Button */}
-      <TouchableOpacity style={styles.centerButton}>
+      <TouchableOpacity style={styles.centerButton  } onPress={() => navigation.navigate("addDocument")}>
         <Feather name="plus" size={32} color="#EDF6F9" />
       </TouchableOpacity>
 
       {/* Alert */}
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={styles.item} onPress={() => navigation.navigate("alert")}  >
         <Feather name="bell" size={24} color="#7884AE" />
         <Text style={styles.label}>Alert</Text>
       </TouchableOpacity>
@@ -45,7 +48,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     flexDirection: "row",
-    backgroundColor: "#19233E", // dark blue
+    backgroundColor: "#19233E", 
     height: 100,
     
     alignItems: "center",
