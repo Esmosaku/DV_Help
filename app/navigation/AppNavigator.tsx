@@ -32,65 +32,63 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function AppNavigator() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator id="Root">
-        <Stack.Screen
-          name="Calculator"
-          component={Calculator}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="documents"
-          component={documents}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="alert"
-          component={EmergencyAlert}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="support"
-          component={support}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="addDocument"
-          component={AddDocumentsScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="DeviceSafety"
-          component={DeviceSafetyScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="newPassword"
-          component={newPassword}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="runSafetyCheck"
-          component={runSafetyCheck}
-          options={{ headerShown: false }}
-        />
+    <Stack.Navigator id="Root">
+      <Stack.Screen
+        name="Calculator"
+        component={Calculator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="documents"
+        component={documents}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="alert"
+        component={EmergencyAlert}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="support"
+        component={support}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="addDocument"
+        component={AddDocumentsScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="DeviceSafety"
+        component={DeviceSafetyScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="newPassword"
+        component={newPassword}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="runSafetyCheck"
+        component={runSafetyCheck}
+        options={{ headerShown: false }}
+      />
 
-        <Stack.Screen
-          name="HomeScreen"
-          component={HomeScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Plan"
-          component={PlanScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="setLocation"
-          component={SetLocationScreen}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <Stack.Screen
+        name="HomeScreen"
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Plan"
+        component={PlanScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="setLocation"
+        component={SetLocationScreen}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
 }

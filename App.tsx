@@ -7,17 +7,8 @@ import * as ScreenCapture from "expo-screen-capture";
 import AppNavigator from "./app/navigation/AppNavigator";
 import Calculator from "./app/screens/calculator";
 
-const DecoyStack = createNativeStackNavigator();
+const RootStack = createNativeStackNavigator();
 
-function DecoyNavigator() {
-  return (
-    <NavigationContainer>
-      <DecoyStack.Navigator screenOptions={{ headerShown: false }}>
-        <DecoyStack.Screen name="Calculator" component={Calculator} />
-      </DecoyStack.Navigator>
-    </NavigationContainer>
-  );
-}
 
 export default function App() {
   const [showDecoy, setShowDecoy] = useState(false);
@@ -37,7 +28,17 @@ export default function App() {
     return () => sub.remove();
   }, []);
 
-  return showDecoy ? <DecoyNavigator /> : <AppNavigator />;
+  return (
+    <NavigationContainer>
+      <RootStack.Navigator id="root" screenOptions={{ headerShown: false}}>
+        {showDecoy ? (
+          <RootStack.Screen name="Decoy" component={Calculator} />
+        ) : (
+          <RootStack.Screen name="Main" component={AppNavigator} />
+        )}
+      </RootStack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 export let PASSWORD = "2+0+4+0";

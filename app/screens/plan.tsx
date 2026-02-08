@@ -153,9 +153,9 @@ export default function PlanScreen(){
                         />
                         {area ? (
                             <View style={{marginTop: 8}}>
-                                <Text style={styles.subheading}>Sample transit for "{area}":</Text>
-                                <Text styles={styles.transmitItem}>• City Bus Line A: Routes 1, 2, 3</Text>
-                                <Text styles={styles.transmitItem}>• Shuttle Service X: Weekdays 6am–10pm</Text>
+                                <Text style={styles.subHeading}>Sample transit for "{area}":</Text>
+                                <Text style={styles.transitItem}>• City Bus Line A: Routes 1, 2, 3</Text>
+                                <Text style={styles.transitItem}>• Shuttle Service X: Weekdays 6am–10pm</Text>
                                 <Text style={{color: "#999", fontSize: 12, marginTop: 8}}>
                                     Replace with real transit data from the researched local systems
                                 </Text>
