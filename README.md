@@ -53,7 +53,7 @@ npx expo run:ios
 
 ## Demo
 
-Check out the demo video: [Haven]( ****)
+Check out the demo video: [Haven](https://drive.google.com/file/d/1l9-Iez5ilVtMCtlHAVO6_KKr6JoX_TB-/view?usp=drivesdk)
 
 
 
